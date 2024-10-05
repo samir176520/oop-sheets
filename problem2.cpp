@@ -6,6 +6,7 @@
 In main function, define four numbers (two point’s coordinates), and apply all functions on them.
 */
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -15,7 +16,7 @@ struct point
     int y;
     void show()
     {
-        cout << '(' << x << ", " << y << ')' << endl;
+        cout << '(' << x << ", " << y << ')';
     };
         
     void scan()
@@ -36,11 +37,10 @@ void swap(point &first, point &seconed)
     seconed = temp;
 }
 
-point distance(point first,point seconed)
+float distance(point first,point seconed)
 {
-    point lenth ;
-    lenth.x = unsigned(first.x - seconed.x);
-    lenth.y = unsigned(first.y - seconed.y);
+    float lenth ;
+    lenth = sqrt (float(pow(first.x - seconed.x, 2) + pow(first.y - seconed.y, 2)));
 
     return lenth;
 }
@@ -53,11 +53,11 @@ int main (void)
     seconed.scan();
 
     swap(first, seconed);
-
+    cout << "points after swap ";
     first.show();
     seconed.show();
+    cout << endl;
 
-    point lenth = distance(first, seconed);
-    cout << "destance between points : \n";
-    cout << lenth.x << " for x axis and " <<lenth.y << " for y axis.\n";  
+   
+    cout << "destance between points equal " << distance(first, seconed) << endl; 
 }
