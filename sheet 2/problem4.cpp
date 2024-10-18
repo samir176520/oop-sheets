@@ -105,7 +105,7 @@ public :
 };
 
 
-// feel free to do your own main function this is my style if you look for ideas <3
+// feel free to do your own main function this is my style if you looking for ideas <3
 int main()
 {
     /* Becarefull of you open "()" and  didn't but any value 
