@@ -1,4 +1,4 @@
-- 👋i السلام عليكم ورحمه الله وبركاته, I’m @samir176520
+- 👋i السلام عليكم ورحمه الله وبركاته, I’m @samir ahmed
 - 👀 I’m interested in technologys and how things work
 - 🌱 I’m currently learning computer science and cybersecurty
 - 💞️ I’m looking to collaborate on several programing projects to enhance my career and add experience to mine
