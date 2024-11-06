@@ -28,7 +28,7 @@ struct point
     float x,y,z;
 };
 
-class point_3D 
+class point_3D
 {
     point P[no];
     float N[no];
@@ -39,16 +39,11 @@ public :
         return sqrt(pow(dot.x, 2) + pow(dot.y, 2) + pow(dot.z, 2));
     };
 
-    // to enter number of points with initalizing point_3D
-    point_3D(int ini_m = -1)
+    // i changed function of read to constructor enter number of points with initalizing point_3D
+    point_3D()
     {
-        if (ini_m == -1)
-        {
             cout << "Enter value how how much points: ";
             cin >> m;
-        }
-        else
-            m = ini_m;
 
         for (int i = 0; i < m; i++)
         {
@@ -58,7 +53,7 @@ public :
         }
     };
     
-    float distance_first_seconed()
+    float distance_first_last()
     {
         return sqrt(pow(P[0].x - P[m].x, 2) + pow(P[0].y - P[m].y, 2) + pow(P[0].z - P[m].z, 2));
     };
@@ -84,10 +79,10 @@ public :
 
     float compare_min(point_3D seconed)
     {
-        if (seconed.distance_first_seconed() < distance_first_seconed())
-            return seconed.distance_first_seconed();
+        if (seconed.distance_first_last() < distance_first_last())
+            return seconed.distance_first_last();
         else
-            return distance_first_seconed();
+            return distance_first_last();
     };
 
     void display()
@@ -105,11 +100,11 @@ public :
 };
 
 
-// feel free to do your own main function this is my style if you looking for ideas <3
+// feel free to do your own main function this is my style if you look for ideas <3
 int main()
 {
-    /* Becarefull if you open "()" and  didn't but any value 
-    between them programe will output a lot of errors, 
+    /* Becarefull of you open "()" and  didn't but any value 
+    between them programe will output alot of errors, 
     open "()" when u only will enter a value
     */
    point_3D first, seconed;
@@ -121,8 +116,8 @@ int main()
         cout << '=';
     cout << endl;
 
-    cout << "Distance between first and last points in first data-set is " << first.distance_first_seconed() << endl;
-    cout << "Distance between first and last points in seconed data-set is " << seconed.distance_first_seconed() << endl;
+    cout << "Distance between first and last points in first data-set is " << first.distance_first_last() << endl;
+    cout << "Distance between first and last points in seconed data-set is " << seconed.distance_first_last() << endl;
     cout << "Minimum distance between first and seconed data-set is " << first.compare_min(seconed) << endl; 
 
     if (first.compare(seconed) == first.max_norm() && first.compare(seconed) == seconed.max_norm())
