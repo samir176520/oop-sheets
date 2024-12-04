@@ -10,6 +10,7 @@ In main function, define two integer numbers, and apply all functions on them.
 
 using namespace std;
 
+// function-prototype: used to decleare a function return-type, name, parameters to use it latter 
 void reverse(int number);
 
 int lenth(int number);
@@ -32,6 +33,7 @@ int main(void)
     cout << "first power seconed is "<< calc(seconed, first) << endl;  
     cout << "seconed power first is "<< calc(first, seconed) << endl;
 
+    // system("pause");
     return 0;
 }
 

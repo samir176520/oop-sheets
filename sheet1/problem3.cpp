@@ -12,29 +12,31 @@ In main function, define an array of m integer numbers, character c,
     and apply all functions on them.
 */
 #include <iostream>
-#include <cctype>
 
 using namespace std;
 
-#define max 1000
+#define limit 1000 // like define a constant (more related to clean-code)
 
+// prototype more clear and beatifull is it.
 void read(int number[],int n);
+
 bool isprime(int number);
+
 bool iseven(int number);
+
 float avarge(int numbers[], int n);
 
-// over loading function note how i used diffrents argumments
-float avarge(int numbers[], int n, char type);
+float avarge(int numbers[], int n, char type); // overloading function notice how i used diffrents argumments
 
 int main(void)
 {
-    int numbers[max], n;
+    int numbers[limit], n;
     char type;
     
-    cout << "How much numbers you will input? :";
+    cout << "How much numbers you will input?: ";
     cin >> n;
 
-    cout << "calculate avarge for even(e) or odd(o) :";
+    cout << "calculate avarge for (e)ven or (o)dd : ";
     cin >> type;
 
     read(numbers, n);
@@ -43,15 +45,16 @@ int main(void)
 
     cout << "Avarge for your choise is " << avarge(numbers, n, type) << endl;
 
-    system("pause");
+    // system("pause");
     return 0;
 }
 
-void read(int numbers[],int n)
+
+void read(int numbers[],int n) // array is call by refrence by defult
 {
     for (int i = 0; i < n; i++)
     {
-        cout << "Enter "<< i << " number :";
+        cout << "Enter ["<< i << "] number: ";
         cin >> numbers[i];
     }
 }
@@ -62,6 +65,7 @@ bool isprime(int number)
     if (number <= 0)
         return false;
 
+    // some math done here.......
     for (int i = 2, num = number / 2; i < num; i++)
     {
         if (number % i == 0)
@@ -74,7 +78,7 @@ bool iseven(int number)
 {
     if (number % 2 == 0)
         return true;
-    else 
+    else
         return false;
 }
 
@@ -83,7 +87,7 @@ float avarge(int numbers[], int n)
     int counter = 0, sum = 0;
     for (int i = 0; i < n; i++)
     {
-        if (isprime)
+        if (isprime(numbers[i]))
         {
             sum += numbers[i];
             counter++;
@@ -96,7 +100,7 @@ float avarge(int numbers[], int n)
 float avarge(int numbers[], int n, char type)
 {
     int sum = 0, counter = 0;
-    switch (type)
+    switch (type) // switch is more fast than if condations sometime....
     {
     case 'e' :
         for (int i = 0; i < n; i++)
@@ -119,10 +123,6 @@ float avarge(int numbers[], int n, char type)
             }
         }
         break;
-    
-    default:
-        cout << "Invaild charcter!\n\a";
-        break;
     }
-    return sum / float(counter);
+    return sum / float(counter); // type-casting is needed (int) / (int) = (int)
 }

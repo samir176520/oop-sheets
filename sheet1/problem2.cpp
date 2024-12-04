@@ -12,38 +12,32 @@ using namespace std;
 
 struct point 
 {
-    int x;
-    int y;
-    void show()
+    // data member are public by defult
+    int x, y;
+
+    // function members end with ';'
+    void print()
     {
         cout << '(' << x << ", " << y << ')';
     };
         
     void scan()
     {
-        cout << "Enter x value :";
-        cin >> x;
-
-        cout << "Enter y value :";
-        cin >> y;
+        cout << "Enter point (in form: x y): ";
+        cin >> x >> y;
     };
         
 };
 
-void swap(point &first, point &seconed)
-{
-    point temp = {first.x, first.y};
-    first = seconed;
-    seconed = temp;
-}
+////////////////////////////////////////////////////////////////////////////////////
+// in this functions it ask for a 4 defult parameters but i do it with my own style
+////////////////////////////////////////////////////////////////////////////////////
 
-float distance(point first,point seconed)
-{
-    float lenth ;
-    lenth = sqrt (float(pow(first.x - seconed.x, 2) + pow(first.y - seconed.y, 2)));
+// here i used call by refrence beacue i will swap values
+void swap(point &first, point &seconed);
 
-    return lenth;
-}
+float distance(point first,point seconed);
+
 
 int main (void)
 {
@@ -54,10 +48,26 @@ int main (void)
 
     swap(first, seconed);
     cout << "points after swap ";
-    first.show();
-    seconed.show();
+    first.print();
+    cout << ' '; // just for style
+    seconed.print();
     cout << endl;
-
    
     cout << "destance between points equal " << distance(first, seconed) << endl; 
+
+    // system("pause");
+    return 0;
+}
+
+void swap(point &first, point &seconed)
+{
+    point temp = {first.x, first.y};
+    first = seconed;
+    seconed = temp;
+}
+
+// function must have '{''}' how ever it's body one line or not
+float distance(point first,point seconed)
+{
+    return sqrt (float(pow(first.x - seconed.x, 2) + pow(first.y - seconed.y, 2)));
 }
