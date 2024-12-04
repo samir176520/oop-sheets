@@ -35,14 +35,15 @@ class point_3D
     int m;
 
 public :
-    float norm(point dot){
+    float norm(point dot)
+    {
         return sqrt(pow(dot.x, 2) + pow(dot.y, 2) + pow(dot.z, 2));
-    };
+    }
 
-    // i changed function of read to constructor enter number of points with initalizing point_3D
+    // i make function of read to be a constructor
     point_3D()
     {
-            cout << "Enter value how how much points: ";
+            cout << "Enter how much points: ";
             cin >> m;
 
         for (int i = 0; i < m; i++)
@@ -51,12 +52,12 @@ public :
             cin >> P[i].x >> P[i].y >> P[i].z;
             N[i] = norm(P[i]);
         }
-    };
+    }
     
     float distance_first_last()
     {
         return sqrt(pow(P[0].x - P[m].x, 2) + pow(P[0].y - P[m].y, 2) + pow(P[0].z - P[m].z, 2));
-    };
+    }
 
     float max_norm()
     {
@@ -67,7 +68,7 @@ public :
                 max = N[i];
         }
         return max;
-    };
+    }
 
     float compare(point_3D seconed)
     {
@@ -75,7 +76,7 @@ public :
             return seconed.max_norm();
         else
             return max_norm();
-    };
+    }
 
     float compare_min(point_3D seconed)
     {
@@ -83,7 +84,7 @@ public :
             return seconed.distance_first_last();
         else
             return distance_first_last();
-    };
+    }
 
     void display()
     {
@@ -96,7 +97,7 @@ public :
             cout << "\t\t";
             cout << N[i] << endl;
         }
-    };
+    }
 };
 
 
@@ -135,10 +136,11 @@ int main()
         seconed.display();
     }
 
-    // just for fun ;)
+    // just for style ;)
     for (int i = 0; i < limit; i++)
         cout << '=';
     cout << endl;
 
+    // system("pause");
     return 0;
 }

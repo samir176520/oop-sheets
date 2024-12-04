@@ -14,7 +14,6 @@ Write a program contains :
 In main function, define two objects of Data class, and apply all functions on them.
 */
 
-
 #include <iostream>
 
 using namespace std;
@@ -23,33 +22,35 @@ using namespace std;
 
 class Data 
 {
+    // class data-member
     float X[limit];
     int h, n;
     char T[limit];
 
 public :
+    //  class function-member
     // constractor to initialize data members in decleration : (int, float, char (; مش احسن مننا)
     Data()
     {
         cout << "Enter how much numbers: ";
-        cin >> n;
+        cin >> n;   // check user input (warrning here do not never ever input charcter to cin >> n) 
 
-        // check user input (warrning here do not never ever input charcter to cin >> n) 
-        // small tip Ctrl + c will save you 
-        while (n <= 0)
+        
+        // small tip {Ctrl + c} will save you sometimes
+        while (n <= 0)     // just for check user input
         {
-            n = 0;
+            n = 0; 
             cout << "Problem3: Invalid value!" << endl 
-                << "Enter positive integar from 1 to "<< limit << ": ";
+                << "Enter positive integar from 1 to "<< limit << ": "; 
             cin >> n;
         }
 
         cout << "Enter constant h: ";
         cin >> h;
 
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) // initialize values of T array
         {
-            cout << "Enter X " << i << " value: ";
+            cout << "Enter X" << i << " value: ";
             cin >> X[i];
             if (int(X[i] + 0.5) % h == 0)
                 T[i] = 'Y';
@@ -63,6 +64,8 @@ public :
     {
         cout << "Your constant is " << h << endl;
         cout << "Number of recordes " << n << endl;
+
+        // tabuler form output
         cout << "\tX\t" << "\tT\t"<< endl;
         for (int i =0; i < n; i++)
             cout << X[i] << "\t\t" << T[i] << endl;
@@ -97,7 +100,6 @@ public :
         else
             seconed.display();
     }
-
 };
 
 int main()
@@ -106,5 +108,7 @@ int main()
     cout << "Avarege value for first set of data is " << first.average() << endl;
     cout << "Avarege value for seconed set of data is " << seconed.average() << endl;
     first.compare(seconed);
+
+    // system("pause");
     return 0;
 }

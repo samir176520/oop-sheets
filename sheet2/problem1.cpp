@@ -13,8 +13,7 @@ Write a program :
 */
 #include <iostream>
 
-// m is a magic number should be defined here as constant by #define do your resarech :)
-#define m 30cout << ""
+#define limit 30 // 30 is a magic number do your resarech :)
 
 using namespace std;
 
@@ -29,52 +28,36 @@ struct employee
 {
     Data E;
     float net_s;
+
     void read()
     {
-        cout << "Enter id name of employee :";
-        cin >> E.name;
-
-        cout << "Enter age of employee :";
-        cin >> E.age;
-
-        cout << "Enter salary of employee " << E.name << " :";
-        cin >> E.salary;
-
-        cout << "Enter tax of employee " << E.name << " :";
-        cin >> E.tax;
+        cout << "Enter the following employee deteils (format: (id-name age salary tax): ";
+        cin >> E.name >> E.age >> E.salary >> E.tax;
 
         // suppose tax in only one number after decimal point 
         net_s = E.salary - (E.salary * E.tax);
-    } 
+    };
 
     void diplay()
     {
         cout << E.name << "\t\t" << E.age << "\t\t" << E.salary << "\t\t" << E.tax << "\t\t" << net_s << endl;
-    }
+    };
 };
 
-void swap(employee &first, employee &seconed);
+void swap(employee &first, employee &seconed); // call by refrence
+
+void selection_sort(employee arr[], int n);
 
 int main()
 {
-    employee arr[m];
+    employee arr[limit];
     int n;
     cout << "Enter number of employees :";
     cin >> n;
     for (int i = 0; i < n; i++)
         arr[i].read(); 
 
-    // selection sort algorithm :suppose first element is the smallest one  
-        // compare it with other and swap minimum value by it
-    int min_index;
-    for (int i = 0; i < n; i++)
-    {
-        min_index = i;
-        for (int j = i + 1; j < n; j++)
-            if (arr[min_index].net_s > arr[j].net_s)
-                min_index = j;
-        swap(arr[i], arr[min_index]);
-    }
+    selection_sort(arr, n); // is use arr only to insert it's pointer
     
     cout << "Difrence between maximum and minimum net salary values is " 
         << arr[n-1].net_s - arr[0].net_s << endl; 
@@ -94,4 +77,23 @@ void swap(employee &first, employee &seconed)
     temp = first;
     first = seconed;
     seconed = temp;
+}
+
+void selection_sort(employee arr[], int n)
+{
+    // 1.start from from first element
+    // 2.repeat until rise end
+        // 3.suppose element is the smallest one  
+            // 4.compare it with other and swap minimum value by it place
+            // 5.move to next element
+            // 6.goto step 2
+    int min_index;
+    for (int i = 0; i < n; i++)
+    {
+        min_index = i;
+        for (int j = i + 1; j < n; j++)
+            if (arr[min_index].net_s > arr[j].net_s)
+                min_index = j;
+        swap(arr[i], arr[min_index]);
+    }
 }
