@@ -50,7 +50,7 @@ public :
 
         for (int i = 0; i < n; i++) // initialize values of T array
         {
-            cout << "Enter X" << i << " value: ";
+            cout << "Enter X" << i + 1 << " value: ";
             cin >> X[i];
             if (int(X[i] + 0.5) % h == 0)
                 T[i] = 'Y';
