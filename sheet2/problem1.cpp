@@ -57,7 +57,7 @@ int main()
     for (int i = 0; i < n; i++)
         arr[i].read(); 
 
-    selection_sort(arr, n); // is use arr only to insert it's pointer
+    selection_sort(arr, n); // here i used "arr" only to insert array pointer
     
     cout << "Difrence between maximum and minimum net salary values is " 
         << arr[n-1].net_s - arr[0].net_s << endl; 
