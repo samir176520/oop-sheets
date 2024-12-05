@@ -27,12 +27,12 @@ struct date
     void read()
     {
         cout << "Enter date values (format: d m y): ";
-        cin >> d >> m >> y; 
+        cin >> d >> m >> y;
     };
 
     void display()
     {
-        cout << d << '-' << m << '-' << y; 
+        cout << d << '-' << m << '-' << y;
     };
 };
 
