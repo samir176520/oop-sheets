@@ -1,56 +1,79 @@
 #include <iostream>
 using namespace std;
 
-// Class definition
-class Data {
+int factorial (int number);
+
+class Data 
+{
 private:
     double D[20], Fact[20];
     int n;
 
 public:
     // Function to read data
-    void read() {
+    void read() 
+    {
         cout << "Enter the number of elements (n <= 20): ";
         cin >> n;
         cout << "Enter " << n << " elements of D: ";
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
             cin >> D[i];
-        }
-        setFact();
+        
+        fact_sum();
     }
 
     // Function to calculate Factorial of each sum
-    void setFact() {
-        for (int i = 0; i < n; i++) {
-            Fact[i] = 1;
-            for (int j = 1; j <= D[i]; j++) {
-                Fact[i] *= j;
-            }
+    void fact_sum() 
+    {
+        for (int i = 0; i < n; i++) 
+        {
+            Fact[i] = 0;
+            for (int j = 0; j <= i; j++)
+                Fact[i] += D[i];
+            Fact[i] = (Fact[i] < 0)? -Fact[i]: Fact[i];
+            Fact[i] = factorial(Fact[i]);
         }
     }
 
     // Function to display data in table form
-    void display() {
+    void display() 
+    {
         cout << "\tD\t\t" << "\t\tFact\t" << endl;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
             cout << D[i] << "\t\t\t\t" << Fact[i] << endl;
-        }
+            
     }
 
     // Overload + operator to add elements of D
-    Data operator+(const Data &obj) {
+    Data operator+(const Data &obj) 
+    {
         Data temp;
-        temp.n = (n < obj.n) ? n : obj.n;  // Set n to minimum
-        for (int i = 0; i < temp.n; i++) {
-            temp.D[i] = this->D[i] + obj.D[i];
+    
+        temp.n = (n < obj.n)? n : obj.n; // Set n to minimum
+        for (int i = 0; i < temp.n; i++) 
+            temp.D[i] = D[i] + obj.D[i];
+        if (temp.n == n)
+        {
+            for (int i = n; i < obj.n; i++)
+                temp.Fact[i] = obj.Fact[i];
+            temp.n = obj.n;
         }
-        temp.setFact();  // Recalculate Fact
+        else
+        {
+            for (int i = obj.n; i < n; i++)
+                temp.Fact[i] = Fact[i];
+            temp.n = n;
+        }
+    
+        temp.fact_sum();  // Recalculate Fact
         return temp;
     }
 
     // Overload <= operator to compare only D
-    bool operator<=(const Data &obj) {
-        for (int i = 0; i < n; i++) {
+    bool operator<=(const Data &obj) 
+    {
+        for (int i = 0; i < n; i++) 
+        {
             if (D[i] > obj.D[i])
                 return false;
         }
@@ -77,6 +100,8 @@ void compareObjects(Data &a, Data &b) {
     else
         cout << "The two objects are not equal." << endl;
 }
+
+
 
 int main() {
     Data obj1, obj2, obj3;
@@ -105,4 +130,12 @@ int main() {
         compareObjects(obj1, obj2); // Compare objects using friend function
     // system("pause");
     return 0;
+}
+
+int factorial (int number)
+{
+    if (number == 1 || number == 0)
+        return 1;
+    else
+        return factorial(number - 1) * number;
 }
