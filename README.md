@@ -55,7 +55,8 @@ OOP-Sheets/
    - Access Modifiers 
 3. **Polymorphism**:  
    - Abstraction classes
-   - Virtual Functions  
+   - methods overriding
+   - Virtual Functions 
 4. **Templates**:  
    - Class Templates  
 
