@@ -21,19 +21,19 @@ It serves as a collection of well-documented examples, exercises, and solutions 
 ## 📂 Repository Structure  
 
 ```
-OOP-Sheets/
+OOP-Sheets
 │
-├── basics                # Basics: Classes, Objects, and Methods
+├── basics                # Classes, Objects, and Methods
 │   ├── sheet1
 │   ├── sheet2
 │   └── sheet3          
 │
-├── midlevel             #encapsulation and operators/      
+├── midlevel             # encapsulation and operators      
 │   ├── sheet4
 │   ├── sheet5
 │   └── sheet6
 │
-├── advanced/            # Advanced Topics: Inheritance and polymorphism and template
+├── advanced             # Inheritance and polymorphism and template
 │   ├── sheet7
 │   ├── sheet8
 │   └── sheet9
