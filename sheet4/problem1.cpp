@@ -29,7 +29,7 @@ public: // methods
         a = (a < 0)? -a : a; // ensure numbers is positive
         b = (b < 0)? -b : b;
         
-        return factorial(a) / (factorial(a - b) * float(factorial(b)));
+        return factorial(a) / (factorial(((a - b) < 0)? -(a - b): (a - b)) * float(factorial(b)));
     };
 
     void read()
@@ -42,6 +42,7 @@ public: // methods
             cout << "Enter [" << i + 1 << "] number: ";
             cin >> D[i];
         }
+        set();
     };
 
     void set()
@@ -74,7 +75,7 @@ public: // methods
     };
 
     // Operators: +, constant + (increase each element of D by this constant, and set the elements of F for the returned object).
-    Data operator +(Data object)
+    Data operator+(Data object)
     {
        if (n > object.n)
        {
@@ -98,8 +99,44 @@ public: // methods
        }
     };
 
-    
+    friend Data operator+(int number, const Data &object)
+    {
+        Data sum;
+        for (int i = 0; i < object.n; i++)
+            sum.D[i] = object.D[i] + number;
+        sum.n = object.n;
+        sum.set();
+        return sum;  
+    };
+
      // Operators: < (compare only the sum of elements of F),!= (compare only D).
+    bool operator<(Data object)
+    {
+        if (sum() < object.sum())
+            return true;
+        else
+            return false;
+    }
+
+    bool operator!=(Data object)
+    {
+        if (object.n == n)
+            return false;
+
+        else if (object.n > n)
+        {
+            for (int i = 0; i < n; i++)
+                if (D[i] == object.D[i])
+                    return false;
+        }
+        else
+        {
+            for (int i = 0; i < object.n; i++)
+                if (D[i] == object.D[i])
+                    return false;
+        }
+        return true;
+    };
 
    
 
@@ -107,7 +144,27 @@ public: // methods
 
 int main()
 {
+    Data first, seconed, sum;
+    first.read();
+    seconed.read();
 
+    if (first != seconed)
+        sum = first + seconed;
+    else
+        cout << "they are the same!\n";
+
+    int number;
+    cout << "Enter positive number to start comparison: ";
+    cin >> number;
+
+    first = number + first;
+    if (sum < first)
+        cout << "Good choice!\n";
+    else
+    {
+        cout << "still sum is greater after add number";
+        sum.display();
+    }
     // system("pause");
     return 0;
 }
@@ -118,7 +175,7 @@ float factorial(int number) // let's do same recursive edition
     if (number == 0 || number == 1)
         return 1;
     else
-        return number * factorial(number--); // pre will takecare of all stuff
+        return number * factorial(number - 1); // pre will takecare of all stuff
 }
 
 
