@@ -47,13 +47,14 @@ OOP-Sheets/
 
 1. **OOP Basics**:  
    - Classes and Objects  
-   - Data Members and Member Functions  
+   - Data Members and Member Functions
+   - Function Overloading  
+   - Operator Overloading
 2. **Inheritance**:  
    - Single and Multiple Inheritance  
-   - Access Modifiers  
+   - Access Modifiers 
 3. **Polymorphism**:  
-   - Function Overloading  
-   - Operator Overloading  
+   - Abstraction classes
    - Virtual Functions  
 4. **Templates**:  
    - Class Templates  
