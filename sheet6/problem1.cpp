@@ -43,7 +43,17 @@ public:
         return x[index];
     }
 
-    friend class Data; // for access resons
+    int limit()
+    {
+        return n;
+    }
+
+    int constant()
+    {
+        return y;
+    }
+
+    // friend class Data; // not impelemented here i know it's easy
 };
 
 
@@ -62,9 +72,9 @@ public:
         {
             cin >> A[i];
             B[i] = 0;
-            for (int j = 0; j < A[i].n; j++)
+            for (int j = 0, limit =  A[i].limit(); j < limit; j++)
             {
-                if((int(A[i][j] + 0.5) % A[i].y) == 0)
+                if(int(A[i][j] + 0.5) % A[i].constant() == 0)
                     B[i] += pow(A[i][j], 2);
                 else
                     B[i] += pow(A[i][j], 3);
