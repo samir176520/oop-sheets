@@ -23,22 +23,72 @@ It serves as a collection of well-documented examples, exercises, and solutions 
 ```
 OOP-Sheets
 │
-├── basics                # Classes, Objects, and Methods
+├── sheet1                               # struct, Classes, Objects, and Methods
+│   ├── homework.cpp 
+│   ├── problem1.cpp
+│   ├── problem2.cpp
+│   ├── problem3.cpp
+│   └── sheet #1 (oop).pdf
+├── sheet2
+│   ├── homework1.cpp
+│   ├── homework2.cpp
+│   ├── problem1.cpp                               
+│   ├── problem2.cpp
+│   ├── problem3.cpp
+│   ├── problem4.cpp
+│   └── sheet #2.pdf
+├── sheet3
+│   ├── homework.cpp
+│   ├── problem1.cpp
+│   ├── problem2.cpp
+│   ├── problem3.cpp
+│   └── sheet #3.pdf
+├── sheet4                             # encapsulation and operators 
+│   ├── homework.cpp
+│   ├── problem1.cpp
+│   ├── problem2.cpp
+│   └── sheet #4.pdf
+├── sheet5
+│   ├── data.h
+│   ├── mark.h
+│   ├── problem1.cpp
+│   ├── problem2.cpp
+│   └── sheet #5.pdf
+├── sheet6                             # Inheritance and polymorphism and template
+│   ├── problem1.cpp
+│   ├── problem2.cpp
+│   ├── problem3.cpp
+│   └── sheet #6.pdf
+├── sheet7                                         
+│   ├── problem1.cpp
+│   ├── problem2.cpp
+│   └── Sheet #7.pdf
+├── sheet8
+│   ├── problem1.cpp
+│   └── sheet #8.pdf
+├── sheet9
+│   ├── problem1.cpp
+│   ├── problem2.cpp
+│   └── sheet #9.pdf
+│
+└── README.md  
+
+
+├── basics                
 │   ├── sheet1
 │   ├── sheet2
 │   └── sheet3          
 │
-├── midlevel             # encapsulation and operators      
+├── midlevel                  
 │   ├── sheet4
 │   ├── sheet5
 │   └── sheet6
 │
-├── advanced             # Inheritance and polymorphism and template
+├── advanced             
 │   ├── sheet7
 │   ├── sheet8
-│   └── sheet9
-│
-└── README.md              # Main repository README file
+  └── sheet9
+            # Main repository README file
 ```
 
 ---
