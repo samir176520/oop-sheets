@@ -78,7 +78,7 @@ public:
 
     void printStudentData() 
     {
-        cout << "Name: " << name << "\nID: " << ID << "\nGPA: " << GPA << endl;
+        cout << "Name: " << name << "\tID: " << ID << "\tGPA: " << GPA << endl;
     }
 };
 
