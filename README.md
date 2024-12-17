@@ -65,7 +65,7 @@ OOP-Sheets
 │   ├── problem2.cpp       # Diamond-shaped inheritance (Hybrid Inheritance), override functions
 │   └── sheet #7.pdf
 ├── sheet8
-│   ├── problem1.cpp       # Single inhertince, polymorphism, virtual functions 
+│   ├── problem1.cpp       # Single inhertince, polymorphism, virtual functions, override
 │   └── sheet #8.pdf
 ├── sheet9
 │   ├── problem1.cpp       # polymorphism, inhertince, Virtual functions, abstract class
