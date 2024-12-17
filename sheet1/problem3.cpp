@@ -12,6 +12,7 @@ In main function, define an array of m integer numbers, character c,
     and apply all functions on them.
 */
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -59,15 +60,13 @@ void read(int numbers[],int n) // array is call by refrence by defult
     }
 }
 
-bool isprime(int number)
-{ 
-    // prime is a natural numbers has no divisors other than 1 and itself
-    if (number <= 0)
-        return false;
-
-    // some math done here.......
-    for (int i = 2, num = number / 2; i < num; i++)
-    {
+bool isPrime(int number) 
+{
+    if (number <= 1) return false; // 0, 1, and negatives are not prime
+    if (number == 2) return true;  // 2 is the only even prime number
+    if (number % 2 == 0) return false; // Exclude other even numbers
+    
+    for (int i = 3; i <= sqrt(number); i += 2) { // Check odd divisors up to sqrt(number)
         if (number % i == 0)
             return false;
     }
