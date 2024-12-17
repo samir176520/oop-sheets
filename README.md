@@ -30,8 +30,8 @@ OOP-Sheets
 │   ├── problem3.cpp       # Functions And arrays
 │   └── sheet #1 (oop).pdf 
 ├── sheet2
-│   ├── homework1.cpp      # Review on every thing related to structure
-│   ├── homework2.cpp      # Review on every thing related to Class
+│   ├── homework1.cpp      # Review on everything related to structure
+│   ├── homework2.cpp      # Review on everything related to Class
 │   ├── problem1.cpp       # Structure, call by reffrence and value                     
 │   ├── problem2.cpp       # Structure, functions
 │   ├── problem3.cpp       # Class , Methods
@@ -62,7 +62,7 @@ OOP-Sheets
 │   └── sheet #6.pdf
 ├── sheet7                                         
 │   ├── problem1.cpp       # Multilevel Inheritance
-│   ├── problem2.cpp       # Diamond-shaped inheritance (Hybrid Inheritance)1
+│   ├── problem2.cpp       # Diamond-shaped inheritance (Hybrid Inheritance)
 │   └── Sheet #7.pdf
 ├── sheet8
 │   ├── problem1.cpp       # Single inhertince, polymorphism, virtual functions 
