@@ -95,8 +95,8 @@ int main()
 
     cout << "\nStudent Data:\n";
     for (int i = 0; i < 3; i++) 
-    {
         students[i].printStudentData();
-    }
+    
+    //system("pause");
     return 0;
 }
