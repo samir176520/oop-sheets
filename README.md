@@ -23,72 +23,76 @@ It serves as a collection of well-documented examples, exercises, and solutions 
 ```
 OOP-Sheets
 │
-├── sheet1                               # struct, Classes, Objects, and Methods
-│   ├── homework.cpp 
-│   ├── problem1.cpp
-│   ├── problem2.cpp
-│   ├── problem3.cpp
-│   └── sheet #1 (oop).pdf
+├── sheet1                               
+│   ├── homework.cpp       # Review on all lecture contant 
+│   ├── problem1.cpp       # Review in basics of cpp
+│   ├── problem2.cpp       # Functions
+│   ├── problem3.cpp       # Functions And arrays
+│   └── sheet #1 (oop).pdf 
 ├── sheet2
-│   ├── homework1.cpp
-│   ├── homework2.cpp
-│   ├── problem1.cpp                               
-│   ├── problem2.cpp
-│   ├── problem3.cpp
-│   ├── problem4.cpp
+│   ├── homework1.cpp      # Review on every thing related to structure
+│   ├── homework2.cpp      # Review on every thing related to Class
+│   ├── problem1.cpp       # Structure, call by reffrence and value                     
+│   ├── problem2.cpp       # Structure, functions
+│   ├── problem3.cpp       # Class , Methods
+│   ├── problem4.cpp       # integrity between Classes and Structure
 │   └── sheet #2.pdf
 ├── sheet3
-│   ├── homework.cpp
-│   ├── problem1.cpp
-│   ├── problem2.cpp
-│   ├── problem3.cpp
+│   ├── homework.cpp       # Review on all lecture contant 
+│   ├── problem1.cpp       # Class, construcor, static vairables 
+│   ├── problem2.cpp       # Class, construcor, static vairables,recursive, friend functions
+│   ├── problem3.cpp       # integraty beyween classes, friend functions
 │   └── sheet #3.pdf
-├── sheet4                             # encapsulation and operators 
-│   ├── homework.cpp
-│   ├── problem1.cpp
-│   ├── problem2.cpp
+├── sheet4                              
+│   ├── homework.cpp       # Review on all lecture contant 
+│   ├── problem1.cpp       # operator overloding, friend operator overloading functions
+│   ├── problem2.cpp       # operator overloding, friend operator overloading functions
 │   └── sheet #4.pdf
 ├── sheet5
-│   ├── data.h
-│   ├── mark.h
-│   ├── problem1.cpp
-│   ├── problem2.cpp
+│   ├── data.h             # Header-file for problem1.cpp
+│   ├── mark.h             # Header-file for problem2.cpp
+│   ├── problem1.cpp       # post-fix, pre-fix, more operator overloading{iostream}, handle header files
+│   ├── problem2.cpp       # post-fix, pre-fix, more operator overloading{iostream}, handle header files
 │   └── sheet #5.pdf
-├── sheet6                             # Inheritance and polymorphism and template
-│   ├── problem1.cpp
-│   ├── problem2.cpp
-│   ├── problem3.cpp
+├── sheet6                             
+│   ├── problem1.cpp       # Composition (Containership), operator overloading{iostream}, friend funcions
+│   ├── problem2.cpp       # Single Inheritance, friend functions
+│   ├── problem3.cpp       # Multiple Inheritance
+│   ├── problem3.cpp   
 │   └── sheet #6.pdf
 ├── sheet7                                         
-│   ├── problem1.cpp
-│   ├── problem2.cpp
+│   ├── problem1.cpp       # Multilevel Inheritance
+│   ├── problem2.cpp       # Diamond-shaped inheritance (Hybrid Inheritance)1
 │   └── Sheet #7.pdf
 ├── sheet8
-│   ├── problem1.cpp
+│   ├── problem1.cpp       # Single inhertince, polymorphism, virtual functions 
 │   └── sheet #8.pdf
 ├── sheet9
-│   ├── problem1.cpp
-│   ├── problem2.cpp
+│   ├── problem1.cpp       # polymorphism, inhertince, Virtual functions, abstract class
+│   ├── problem2.cpp       # templete class
 │   └── sheet #9.pdf
 │
-└── README.md  
+└── README.md  # Main repository README file
 
+```
 
-├── basics                
+### Mesure by difficult
+```
+├── basics                # struct, Classes, Objects, and Methods
 │   ├── sheet1
 │   ├── sheet2
 │   └── sheet3          
 │
-├── midlevel                  
+├── midlevel              # encapsulation and operators
 │   ├── sheet4
 │   ├── sheet5
 │   └── sheet6
 │
-├── advanced             
-│   ├── sheet7
-│   ├── sheet8
-  └── sheet9
-            # Main repository README file
+└── advanced             # Inheritance and polymorphism and template
+    ├── sheet7
+    ├── sheet8
+    └── sheet9
+            
 ```
 
 ---
