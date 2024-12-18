@@ -34,7 +34,7 @@ public:
     virtual int fact()
     {
         int factorial = 1, max_num = max();
-        for (int i = 2; i < max_num; i++)
+        for (int i = 2; i <= max_num; i++)
             factorial *= i;
         return factorial;
     }
@@ -79,7 +79,7 @@ public:
     int fact()
     {
         int factorial = 1, max_num = max();
-        for (int i = 2; i < max_num; i++)
+        for (int i = 2; i <= max_num; i++)
             factorial *= i;
         return factorial;
     }
@@ -96,7 +96,7 @@ public:
     {
         for (int i = 0; i < n; i++)
         {
-            D2[i] = 0;
+            D2[i] = 1; // multiblication start with one
             int temp = (B[i] == 0? 1: B[i]); // condattion in sheet to make multiplicton done
 
             if (B[i] % 2 == 0)
@@ -120,7 +120,7 @@ public:
     int fact()
     {
         int factorial = 1, max_num = max();
-        for (int i = 2; i < max_num; i++)
+        for (int i = 2; i <= max_num; i++)
             factorial *= i;
         return factorial;
     }
@@ -135,7 +135,7 @@ protected:
 public: 
     void set()
     {
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i += 3)
         {
             // D (D0 is max element in B, D1 is max element in D1, and D2 is the max element in D2),
             D[i] = Base::max();
@@ -155,7 +155,7 @@ public:
             summation += D[i];
 
         int factorial = 1;
-        for (int i = 2; i < summation; i++)
+        for (int i = 2; i <= summation; i++)
             factorial *= i;
         return factorial;
     }
@@ -167,7 +167,7 @@ int main()
     Drive2 obj2;
     Drive obj;
 
-    Base *arr[3] = {&obj, &obj1, &obj2} ; // one pure virtual function "virtual void read() = 0;" in Base and i cannot do this
+    Base *arr[3] = {&obj, &obj1, &obj2} ;
     
 
     arr[1]->Base::set(); // access the base to intialize first

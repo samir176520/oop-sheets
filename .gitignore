@@ -2,3 +2,6 @@
 .vscode/c_cpp_properties.json
 .vscode/settings.json
 sheet2/problem2
+vid2this.cpp
+test.cpp
+.gitignore
