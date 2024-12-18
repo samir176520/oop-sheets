@@ -161,29 +161,30 @@ public:
     }
 };
 
-int main()
-{
+int main() {
     Drive1 obj1;
     Drive2 obj2;
     Drive obj;
 
-    Base *arr[3] = {&obj, &obj1, &obj2} ;
-    
+    // Array of pointers to Base class
+    Base *arr[3] = {&obj, &obj1, &obj2};
 
-    arr[1]->Base::set(); // access the base to intialize first
-    for (int i = 2; i > 0; i--)
-        arr[i]->set(); // move to initialize items before items
-    
-    for (int i = 0; i < 3; i++)
-    {
-        cout << "Fact value for Drive-" << i << " class: " << arr[i]->fact() << endl; // print fact for each one
-        cout << "Max in Drive-" << i << " class: " << arr[i]->max() << endl;          // print each max for each class
+    // Call Base::set() once to initialize B
+    arr[0]->Base::set();
+
+    // Call set() for Drive1, Drive2, and Drive
+    arr[1]->set(); // Calls Drive1::set()
+    arr[2]->set(); // Calls Drive2::set()
+    arr[0]->set(); // Calls Drive::set()
+
+    // Display results
+    for (int i = 0; i < 3; i++) {
+        cout << "Fact value for Drive-" << i << " class: " << arr[i]->fact() << endl;
+        cout << "Max in Drive-" << i << " class: " << arr[i]->max() << endl;
     }
 
-    arr[0]->display(); // 0, 1, 2 any thing no matter 
+    // Display factorial of max number in B
+    arr[0]->display();
 
-
-    // system ("pause");
     return 0;
-          
 }
