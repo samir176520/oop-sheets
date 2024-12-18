@@ -9,12 +9,12 @@ protected:
     int B[30];
     int n;
 public:
-    void set()
+    void read()
     {
         cout << "Enter number of elements (n <= 30): ";
         cin >> n;
 
-        cout << (n == 0? "": "Enter the following numbers (integars): ");
+        cout << (n == 0 ? "" : "Enter the following numbers (integers): ");
         for (int i = 0; i < n; i++)
         {
             cout << "Enter number-" << i + 1 << ": ";
@@ -31,9 +31,9 @@ public:
         return max;
     }
 
-    virtual int fact()
+    virtual long long fact()
     {
-        int factorial = 1, max_num = max();
+        long long factorial = 1, max_num = max();
         for (int i = 2; i <= max_num; i++)
             factorial *= i;
         return factorial;
@@ -41,29 +41,25 @@ public:
     
     void display()
     {
-        cout << "Factorial of max number: " << fact() << endl;
+        cout << "Factorial of max number: " << this->fact() << endl;
     }
-
-
-
 };
 
 class Drive1 : virtual public Base
 {
 protected:
-
     long int D1[30];
 
 public: 
     void set()
     {
+        // Don't prompt for input again. Just calculate based on B values.
         for (int i = 0; i < n; i++)
         {
-            
             if (B[i] % 2 == 0)
-                    D1[i] = B[i] * (B[i] + 1) * (2 * B[i] + 1) / 6 ; // calculate summation for i ^ 2
+                D1[i] = (B[i] * (B[i] + 1) * (2 * B[i] + 1)) / 6; // calculate summation for i^2
             else
-                    D1[i] = pow(B[i] * (B[i] + 1) /2 , 2); // calculate summation for i ^ 3 
+                D1[i] = pow(B[i] * (B[i] + 1) / 2, 2); // calculate summation for i^3
         }
     }
 
@@ -76,9 +72,9 @@ public:
         return max;
     }
 
-    int fact()
+    long long fact()
     {
-        int factorial = 1, max_num = max();
+        long long factorial = 1, max_num = max();
         for (int i = 2; i <= max_num; i++)
             factorial *= i;
         return factorial;
@@ -87,17 +83,17 @@ public:
 
 class Drive2 : virtual public Base
 {
-    protected:
-
+protected:
     long int D2[30];
 
 public: 
     void set()
     {
+        // Don't prompt for input again. Just calculate based on B values.
         for (int i = 0; i < n; i++)
         {
-            D2[i] = 1; // multiblication start with one
-            int temp = (B[i] == 0? 1: B[i]); // condattion in sheet to make multiplicton done
+            D2[i] = 1; // multiplication start with one
+            int temp = (B[i] == 0 ? 1 : B[i]); // condition in sheet to make multiplication done
 
             if (B[i] % 2 == 0)
                 for (int j = 1; j < temp; j++)
@@ -117,9 +113,9 @@ public:
         return max;
     }
 
-    int fact()
+    long long fact()
     {
-        int factorial = 1, max_num = max();
+        long long factorial = 1, max_num = max();
         for (int i = 2; i <= max_num; i++)
             factorial *= i;
         return factorial;
@@ -129,7 +125,6 @@ public:
 class Drive : public Drive1, public Drive2
 {
 protected:
-
     long int D[30];
 
 public: 
@@ -137,54 +132,56 @@ public:
     {
         for (int i = 0; i < n; i += 3)
         {
-            // D (D0 is max element in B, D1 is max element in D1, and D2 is the max element in D2),
+            // D (D0 is max element in B, D1 is max element in D1, and D2 is the max element in D2)
             D[i] = Base::max();
             if (i + 1 < n)
                 D[i + 1] = Drive1::max();
 
             if (i + 2 < n)
-                D[i + 1] = Drive2::max();
+                D[i + 2] = Drive2::max(); // Fix: Assign to D[i + 2] instead of D[i + 1]
         }
     }
 
-    int fact()
+    long long fact()
     {
-        int summation = 0;
+        long long summation = 0;
         // get sum for all elements of D
-        for (int i =0; i < n; i++)
+        for (int i = 0; i < n; i++)
             summation += D[i];
 
-        int factorial = 1;
+        long long factorial = 1;
         for (int i = 2; i <= summation; i++)
             factorial *= i;
         return factorial;
     }
 };
 
-int main() {
+int main() 
+{
     Drive1 obj1;
     Drive2 obj2;
     Drive obj;
+    Base obj_base;
 
     // Array of pointers to Base class
-    Base *arr[3] = {&obj, &obj1, &obj2};
+    Base *arr[4] = {&obj, &obj1, &obj2, &obj_base};
 
-    // Call Base::set() once to initialize B
-    arr[0]->Base::set();
 
-    // Call set() for Drive1, Drive2, and Drive
-    arr[1]->set(); // Calls Drive1::set()
-    arr[2]->set(); // Calls Drive2::set()
-    arr[0]->set(); // Calls Drive::set()
+    // Call set() for the first time (only one input prompt for B)
+    for (int i = 0; i < 4; i++)
+        arr[i]->read(); // Calls Base::set()
 
-    // Display results
-    for (int i = 0; i < 3; i++) {
-        cout << "Fact value for Drive-" << i << " class: " << arr[i]->fact() << endl;
-        cout << "Max in Drive-" << i << " class: " << arr[i]->max() << endl;
-    }
+    // set all elements for all objects inhertiened
+    obj1.set();
+    obj2.set();
+    obj.set(); // for Drive::set()
+    obj.Drive1::set();
+    obj.Drive2::set();
+    
 
-    // Display factorial of max number in B
-    arr[0]->display();
+    // Display results of each fact based on class defiened
+    for (int i = 0; i < 4; i++) 
+         arr[i]->display();
 
     return 0;
 }
